@@ -15,18 +15,27 @@ const books = [
     author: "Sandra Brown",
   },
 ];
-const names = ["ali", "usama", "nawaz"];
-const newName = names.map((name) => {
-  return <h1>{name}</h1>;
-});
-console.log(newName);
+
 function BookList() {
-  return <section className='booklist'>{newName}</section>;
+  return (
+    <section className='booklist'>
+      {books.map((book) => {
+        const { img, title, author } = book;
+        return <Book book={book}></Book>;
+      })}
+    </section>
+  );
 }
 
 const Book = (props) => {
-  // const { img, title, author } = props;
-  return <article className='book'></article>;
+  const { img, title, author } = props.book;
+  return (
+    <article className='book'>
+      <img src={img} alt='' />
+      <h1>{title}</h1>
+      <h4>{author}</h4>
+    </article>
+  );
 };
 
 // const Greeting = () => {
