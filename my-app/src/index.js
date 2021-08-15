@@ -38,7 +38,12 @@ const Book = (props) => {
     console.log(author);
   };
   return (
-    <article className='book'>
+    <article
+      className='book'
+      onMouseOver={() => {
+        console.log(title);
+      }}
+    >
       <img src={img} alt='' />
       <h1
         onClick={() => {
