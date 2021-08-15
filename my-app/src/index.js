@@ -34,6 +34,9 @@ const Book = (props) => {
   const clickHandler = () => {
     alert("hello world");
   };
+  const complexExample = (author) => {
+    console.log(author);
+  };
   return (
     <article className='book'>
       <img src={img} alt='' />
@@ -47,6 +50,9 @@ const Book = (props) => {
       <h4>{author}</h4>
       <button type='button' onClick={clickHandler}>
         Reference
+      </button>
+      <button type='button' onClick={() => complexExample(author)}>
+        more complex example
       </button>
     </article>
   );
