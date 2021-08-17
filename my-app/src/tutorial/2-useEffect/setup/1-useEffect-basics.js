@@ -11,7 +11,7 @@ const UseEffectBasics = () => {
     } else {
       document.title = "React App";
     }
-  });
+  }, [value]);
   console.log("render component");
   return (
     <>
