@@ -12,6 +12,10 @@ const UseEffectBasics = () => {
       document.title = "React App";
     }
   }, [value]);
+
+  useEffect(() => {
+    console.log("hello world");
+  }, []);
   console.log("render component");
   return (
     <>
