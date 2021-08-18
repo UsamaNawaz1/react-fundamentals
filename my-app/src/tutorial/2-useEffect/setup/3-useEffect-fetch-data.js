@@ -7,8 +7,10 @@ const UseEffectFetchData = () => {
   const getUsers = async () => {
     const response = await fetch(url);
     const users = await response.json();
+
     setUsers(users);
   };
+
   useEffect(() => {
     getUsers();
   }, []);

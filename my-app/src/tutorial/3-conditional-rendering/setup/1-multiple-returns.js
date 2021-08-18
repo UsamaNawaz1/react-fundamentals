@@ -1,7 +1,11 @@
-import React, { useState, useEffect } from 'react';
-const url = 'https://api.github.com/users/QuincyLarson';
+import React, { useState, useEffect } from "react";
+const url = "https://api.github.com/users/QuincyLarson";
 const MultipleReturns = () => {
-  return <h2>multiple returns</h2>;
+  const [loading, setLoading] = useState(false);
+  if (loading) {
+    return <h1>Loading</h1>;
+  }
+  return <h1>Multiple Loading</h1>;
 };
 
 export default MultipleReturns;
