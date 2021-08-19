@@ -47,7 +47,7 @@ const ControlledInputs = () => {
             />
           </div>
           <div className='form-control'>
-            <label htmlFor='age'>Name : </label>
+            <label htmlFor='age'>Age : </label>
             <input
               type='text'
               id='age'
@@ -61,11 +61,12 @@ const ControlledInputs = () => {
           </button>
         </form>
         {people.map((person, index) => {
-          const { id, firstName, email } = person;
+          const { id, firstName, email, age } = person;
           return (
             <div className='item' key={id}>
               <h4>{firstName}</h4>
               <p>{email}</p>
+              <p>{age}</p>
             </div>
           );
         })}
