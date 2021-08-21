@@ -18,8 +18,16 @@ function App() {
         {alert.show && <Alert />}
         <h3>grocery bud</h3>
         <div className='form-control'>
-          <input type='text' />
-          <button type='submit' className='submit-btn'></button>
+          <input
+            type='text'
+            className='grocery'
+            placeholder='e.g. eggs'
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+          <button type='submit' className='submit-btn'>
+            {isEditing ? 'edit' : 'submit'}
+          </button>
         </div>
       </form>
       <div className='grocery-container'>
