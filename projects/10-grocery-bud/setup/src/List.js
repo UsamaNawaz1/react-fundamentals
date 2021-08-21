@@ -13,7 +13,7 @@ const List = ({ items }) => {
                 <FaEdit />
               </button>
 
-              <button type='button' className='edit-btn'>
+              <button type='button' className='delete-btn'>
                 <FaTrash />
               </button>
             </div>
