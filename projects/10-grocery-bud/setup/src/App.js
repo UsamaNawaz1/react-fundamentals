@@ -28,6 +28,7 @@ function App() {
       setName('');
       setEditID(null);
       setIsEditing(false);
+      showAlert(true, 'success', 'the edit has been edited');
     } else {
       showAlert(true, 'success', 'item added to the list');
 
