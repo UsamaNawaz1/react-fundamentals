@@ -15,7 +15,7 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!name) {
-      setAlert({ show: true, msg: 'please enter value', type: 'danger' });
+      showAlert(true, 'danger, please enter the value');
     } else if (name && isEditing) {
       //deal with editing
     } else {
@@ -26,6 +26,10 @@ function App() {
       setList([...list, newItem]);
       setName('');
     }
+  };
+
+  const showAlert = (show = false, type = '', msg = '') => {
+    setAlert({ show, type, msg });
   };
   return (
     <section className='section-center'>
