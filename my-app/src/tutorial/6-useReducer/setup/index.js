@@ -9,6 +9,13 @@ const Index = () => {
   const [name, setName] = useState('');
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (name) {
+      showModel(true);
+      setPeople([...people, { id: new Date.getTime().toString(), name }]);
+      setName('');
+    } else {
+      showModel(true);
+    }
   };
   return (
     <>
