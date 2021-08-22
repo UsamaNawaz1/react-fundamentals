@@ -10,11 +10,11 @@ const Index = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (name) {
-      showModel(true);
-      setPeople([...people, { id: new Date.getTime().toString(), name }]);
+      setShowModel(true);
+      setPeople([...people, { id: new Date().getTime().toString(), name }]);
       setName('');
     } else {
-      showModel(true);
+      setShowModel(true);
     }
   };
   return (
@@ -30,6 +30,14 @@ const Index = () => {
         </div>
         <button type='submit'>Add</button>
       </form>
+      {people.map((person) => {
+        const { id, name } = person;
+        return (
+          <div>
+            <h4>{name}</h4>
+          </div>
+        );
+      })}
     </>
   );
 };
