@@ -20,6 +20,9 @@ const reducer = (state, action) => {
       modelContent: 'please enter the value',
     };
   }
+  if (action.type === 'CLOSE_MODAL') {
+    return { ...state, isModelOpen: false };
+  }
 };
 
 const defaultState = {
@@ -40,9 +43,14 @@ const Index = () => {
       dispatch({ type: 'NO_VALUE' });
     }
   };
+  const closeModel = () => {
+    dispatch({ type: 'CLOSE_MODAL' });
+  };
   return (
     <>
-      {state.isModelOpen && <Modal modelContent={state.modelContent} />}
+      {state.isModelOpen && (
+        <Modal modelContent={state.modelContent} closeModal={closeModel} />
+      )}
       <form onSubmit={handleSubmit} className='form'>
         <div>
           <input
