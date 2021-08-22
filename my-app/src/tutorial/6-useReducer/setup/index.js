@@ -4,7 +4,7 @@ import { data } from '../../../data';
 // reducer function
 
 const reducer = (state, action) => {
-  if (action.type === 'TESTING') {
+  if (action.type === 'ADD_ITEM') {
     return {
       ...state,
       people: data,
@@ -12,7 +12,7 @@ const reducer = (state, action) => {
       modelContent: 'item added',
     };
   }
-  return state;
+  throw new Error('NO matching action type');
 };
 
 const defaultState = {
@@ -26,7 +26,7 @@ const Index = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (name) {
-      dispatch({ type: 'TESTING' });
+      dispatch({ type: 'ADD_ITEM' });
     } else {
     }
   };
